@@ -34,10 +34,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);}
+  transform: translate(-50%, -50%);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
 #img:hover { transform: scale(2);
   left:35% !important;
   top:30% !important;
+  -webkit-filter: none; /* Safari 6.0 - 9.0 */
+  filter: none;
  }
 
 @keyframes App-logo-spin {

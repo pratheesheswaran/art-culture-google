@@ -21,14 +21,24 @@ class App extends Component {
       this.getRandomArt(); 
     
   }
+  componentDidMount() {
+    document.addEventListener('click', this.getArt);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.getArt);
+  }
+  getArt=()=>{
+    let jsonLength = json.length;
+    let randomArt =Math.abs(Math.floor(Math.random() * (0 - Math.floor(jsonLength))) + 0); 
+    console.log('randomArt',randomArt)
+    this.setState({currentArt: json[randomArt],loading:false})
+    console.log('art', json[randomArt], randomArt)
+  }
   getRandomArt(){
     setInterval(()=> {
-      let jsonLength = json.length;
-      let randomArt =Math.abs(Math.floor(Math.random() * (0 - Math.floor(jsonLength))) + 0); 
-      console.log('randomArt',randomArt)
-      this.setState({currentArt: json[randomArt],loading:false})
-      console.log('art', json[randomArt], randomArt) 
-      }, 5000);
+     this.getArt()
+      }, 10000);
 
   }
   render() {
