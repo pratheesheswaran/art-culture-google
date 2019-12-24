@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body {
+  background-color: black;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,20 +29,24 @@
 .App-link {
   color: #61dafb;
 }
-.wrapper {
-  /* position: relative; */
-}
+
+
 #img { transition: all 1s ease-in-out;
-  position: absolute;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
 }
 #img:hover { transform: scale(2);
-  left:35% !important;
+  left:33% !important;
   top:30% !important;
+  /* transform: translate(50%, 50%); */
   -webkit-filter: none; /* Safari 6.0 - 9.0 */
   filter: none;
  }
